@@ -1,18 +1,21 @@
 {
-    "name": "Debian 13 (Trixie)",
-    "image": "debian:13",
-    "features": {
-        "ghcr.io/devcontainers/features/common-utils:2": {
-            "installZsh": true,
-            "configureZshAsDefaultShell": true,
-            "installOhMyZsh": true
-        }
-    },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "ms-vscode.cpptools"
-            ]
-        }
+  "name": "Debian 13 Codespace",
+  "image": "mcr.microsoft.com/devcontainers/base:debian-13",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
     }
+  },
+  "forwardPorts": [3000, 8080],
+  "postCreateCommand": "echo 'Debian 13 Codespace готов к работе!'"
 }
